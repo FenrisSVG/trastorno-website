@@ -1,32 +1,65 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <header class="header">
+      <div class="header-container">
+        <h1 class="title">Trastornos Mentales</h1>
+        <div class="icon-menu" id="icon-bars" @click="showMenu">
+          <i class="fas fa-bars header-container__icon"></i>
+        </div>
+      </div>
+      <nav class="nav" id="nav">
+        <div class="icon-close" id="icon-close" @click="closeMenu">
+          <i class="fas fa-times icon-close__icon"></i>
+        </div>
+        <ol class="main-menu">
+          <li class="main-menu__item">
+            <router-link class="main-menu__link" to="">Link 1</router-link>
+          </li>
+          <li class="main-menu__item">
+            <router-link class="main-menu__link" to="">Link 2</router-link>
+          </li>
+          <li class="main-menu__item">
+            <router-link class="main-menu__link" to="">Link 3</router-link>
+          </li>
+          <li class="main-menu__item">
+            <router-link class="main-menu__link" to="">Link 4</router-link>
+          </li>
+          <li class="main-menu__item">
+            <router-link class="main-menu__link" to="">Link 5</router-link>
+          </li>
+        </ol>
+      </nav>
+    </header>
     <router-view/>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+export default{
+  name:'App',
+  methods: {
+    closeMenu(e){
+      const iconClose = document.getElementById('icon-close')
+      const nav = document.getElementById('nav')
 
-#nav {
-  padding: 30px;
+      if(iconClose){
+        if(e.target.classList.contains('icon-close') || e.target.tagName == "I"){
+            nav.classList.remove('show')
+        }
+      }
+    },
+    showMenu(e){
+      const iconBars = document.getElementById('icon-bars')
+      const nav = document.getElementById('nav')
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+       if(iconBars){
+        if(e.target.classList.contains('icon-menu') || e.target.tagName == "I"){
+            nav.classList.add('show')
+        }
+      }
     }
   }
 }
-</style>
+</script>
+
+
