@@ -3,17 +3,23 @@
     --secondary-color: #52d3aa;
     --danger-color: #972745;
     --background-color: #111213;
+    --background-color-1: #F1EAE1;
+    --background-color-2: #F2BEBD
     --text-color: #eff;
     --title-color: hsl(33, 15%, 14%);
     --menu-color: ##D5DCD5;
-    --menu-color-1: ##D5DCD5;
-    --menu-color-2: #F0EAE3;
-    --menu-color-3: #1C1B22;
-    --menu-color-4: #6A5E5F;
-    --menu-color-5: #6A5E5F;
-    --menu-color-6: #6A5E5F;
-    --menu-color-7: #6A5E5F;
+    --menu-color-1: #F0EAE3;
+    --menu-color-2: ##E7C2BD;
+    --menu-color-3: #94A98C;
+    --menu-color-4: #B7C0C1;
+    --menu-color-5: #E1B695;
+    --menu-color-6: #DDDBC1;
+    --menu-color-7: #DBC47E;
     --menu-color-8: #6A5E5F;
+    --aside-color: #D4DDD4;
+    --aside-color-1: #C2813B;
+    --aside-color-2: #12504F;
+    --aside-color-3: #C2813B;
     --link-color: rgb(57, 107, 160);
   }
   
@@ -27,4 +33,10 @@
   $menu-color-1: var(--menu-color-1);
   $menu-color-2: var(--menu-color-2);
   $menu-color-3: var(--menu-color-3);
+  $menu-color-4: var(--menu-color-4);
+  $menu-color-5: var(--menu-color-5);
+  $menu-color-6: var(--menu-color-6);
+  $menu-color-7: var(--menu-color-7);
+  $aside-color: var(--aside-color);
+  $aside-color-2: var(--aside-color-2);
   $link-color: var(--link-color);

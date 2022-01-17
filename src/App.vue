@@ -2,7 +2,7 @@
   <div id="app">
     <header class="header">
       <div class="header-container">
-        <h1 class="title">Trastornos Mentales</h1>
+        <p class="header-container__title">Trastornos Mentales</p>
         <div class="icon-menu" id="icon-bars" @click="showMenu">
           <i class="fas fa-bars header-container__icon"></i>
         </div>
@@ -15,17 +15,23 @@
           <li class="main-menu__item">
             <router-link class="main-menu__link" to="">Link 1</router-link>
           </li>
-          <li class="main-menu__item">
+          <li class="main-menu__item main-menu__item--primary">
             <router-link class="main-menu__link" to="">Link 2</router-link>
           </li>
-          <li class="main-menu__item">
+          <li class="main-menu__item main-menu__item--secondary">
             <router-link class="main-menu__link" to="">Link 3</router-link>
           </li>
-          <li class="main-menu__item">
+          <li class="main-menu__item main-menu__item--thirdary">
             <router-link class="main-menu__link" to="">Link 4</router-link>
           </li>
-          <li class="main-menu__item">
+          <li class="main-menu__item main-menu__item--fivedary">
             <router-link class="main-menu__link" to="">Link 5</router-link>
+          </li>
+          <li class="main-menu__item main-menu__item--fourdary">
+            <router-link class="main-menu__link" to="">Link 6</router-link>
+          </li>
+          <li class="main-menu__item main-menu__item--sixdary">
+            <router-link class="main-menu__link" to="">Link 7</router-link>
           </li>
         </ol>
       </nav>

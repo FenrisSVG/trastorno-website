@@ -1,12 +1,13 @@
 // TITLE AND ICON HEADER STYLES
 .header-container{
     display: flex;
-    gap: 10px;
+    gap: 15px;
     justify-content: center;
     align-items: center;
-    background-color: $menu-color-2;
+    background-color: $menu-color;
 
-    &__icon{
+    &__icon,
+    &__title{
         font-size: 1.2rem;
     }
 }
@@ -24,7 +25,8 @@
     padding: 3em 1.5em 0 2.2em;
     transform: translate(-100%);
     transition: transform .5s ease-in-out;
-    background-color: #fff;
+    background-color: $text-color;
+    z-index: 100;
 }
 
 .main-menu{
@@ -41,7 +43,31 @@
         width: 100%;
         padding: .1em 0 .2em 1.3em;
         border-radius: 20px;
-        background-color: red;
+        background-color: $menu-color;
+
+        &--primary{
+            background-color: $menu-color;
+        }
+
+        &--secondary{
+            background-color: $menu-color-1;
+        }
+
+        &--thirdary{
+            background-color: $menu-color-2;
+        }
+
+        &--fourdary{
+            background-color: $menu-color-3;
+        }
+
+        &--fivedary{
+            background-color: $menu-color-4;
+        }
+
+        &--sixdary{
+            background-color: $menu-color-5;
+        }
     }
 
     &__link{
@@ -61,7 +87,6 @@
 .show{
     transform: translate(0);
 }
-
 
 
 // MEDIA QUERIE FOR HOVERS

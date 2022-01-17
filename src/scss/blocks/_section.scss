@@ -1,0 +1,71 @@
+.main{
+    display: flex;
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    padding: 0 2.5em 4em;
+
+    //STYLES FOR THE HTML STRUCTURE CALL PART 0$
+    &-chapter{
+        padding-top: 4em;
+        padding-bottom: .5em;
+
+        &__text{
+            width: 33%;
+            margin-bottom: 0;
+            padding: .1em .5em .2em .5em;
+            border-radius: 25px;
+            background-color: #6affaa;
+        }
+    }
+
+    &-image{
+        height: 300px;
+        border-radius: 25px;
+        overflow: hidden;
+        animation: move 5s infinite ;
+
+        &__img{
+            display: block;
+            height: 100%;
+        }
+    }
+}
+
+@keyframes move{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(10%)
+    }
+
+    100%{
+        transform: translateY(0)
+    }
+}
+
+.article{
+
+    &-header{
+      
+      &__title{
+          margin-top: 0;
+          margin-bottom: 0;
+          font-size: 2rem;
+      }
+
+      &__subtitle{
+          font-size: 1.4rem;
+          line-height: 1.4;
+      }
+    }
+
+    &-body__text{
+        font-size: .8rem;
+        line-height: 1.6;
+        margin-bottom: 1.5em;
+    }
+}
