@@ -1,0 +1,217 @@
+.article-tips{
+    display: flex;
+    width: 100%;
+}
+
+.tips-header{
+
+    @include laptop{
+        grid-column: 1/3;
+        grid-row: 2/3;
+    }
+
+    &__title{
+        color: $menu-color-1;
+
+        @include laptop{
+            font-size: 4rem;
+        }
+    }
+
+    &__text{
+        font-size: 1rem;
+        line-height: 1.5;
+        color: $background-color-1;
+
+        @include laptop{
+            font-size: 2rem;
+            line-height: 1.4;
+        }
+    }
+}
+
+.tips-body{
+
+    @include laptop{
+        grid-column: 1/3;
+        grid-row: 3/4;
+    }
+
+    &__text{
+        margin-top: .6em;
+        font-size: 1.2rem;
+        text-align: left;
+        width: 100%;
+        color: $background-color-1;
+
+        @include laptop{
+            font-size: 2rem;
+        }
+    }
+
+    &__scroll{
+        display: flex;
+        gap: 1px;
+        scroll-snap-type: x mandatory;
+        overflow-x: scroll;
+        
+        @include laptop{
+            max-width: 1400px;
+        }
+    }
+    
+    &__blockquote{
+        flex-shrink: 0;
+        margin: .3em 0 .4em 0;
+        font-size: 1.8rem;
+        line-height: 1.4;
+        color: #eff;
+        scroll-snap-align: center;
+
+        @include laptop{
+            width: 100%;
+            margin: auto 0;
+            font-size: 5rem;
+            line-height: 1.2;
+        }
+    }
+}
+
+.tips-footer{
+    display: grid;
+    grid-template-rows: repeat(5,1fr);
+
+    @include laptop{
+        grid-column: 1/3;
+        grid-row: 4/5;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(2,1fr);
+        gap: 10px;
+    }
+
+    &__container-title{
+        font-size: 1.3rem;
+        color: $text-color;
+
+        @include laptop{
+            font-size: 1.8rem;
+        }
+    }
+
+    &__container-text{
+        line-height: 1.5;
+        font-size: 1rem;
+        color: $background-color-1;
+
+        @include laptop{
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.slider__aside-title--font{
+    font-size: 1rem;
+}
+
+.section--tips{
+    width: 86%;
+    padding-bottom: 3.5em;
+    background-color: $background-color-4;
+
+    @include laptop{
+        width: 100%;
+        grid-template-rows: 140px 280px 390px 1fr;
+        padding-bottom: 2em;
+    }
+}
+
+.article-header__tipstext{
+    @include laptop{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+        gap: 10px;
+    }
+}
+
+.tips-body__scroll::-webkit-scrollbar{
+    display: block;
+    height: 0;
+
+    @include laptop{
+        width: 5px;
+        height: 10px;
+    }
+}
+
+.tips-body__scroll::-webkit-scrollbar-track{
+    @include laptop{
+        background-color: #161919;
+    }
+}
+
+.tips-body__scroll::-webkit-scrollbar-thumb{
+    background-color: #323739;
+    border-radius: 10px;
+}
+
+.tips-body__scroll::-webkit-scrollbar-track-piece:end {
+    @include laptop{
+        background: transparent;
+        margin-bottom: 5px; 
+    }
+}
+
+.tips-body__scroll::-webkit-scrollbar-track-piece:start {
+    @include laptop{
+        background: transparent;
+        margin-top: 5px;
+    }
+}
+
+.scroll-bar{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 70px;
+    height: 25px;
+    border-radius: 15px;
+    background-color: white;
+
+    @include laptop{
+        display: none;
+    }
+
+    &__circle{
+        position: absolute;
+        right: 2px;
+        height: 85%;
+        width: 30%;
+        border-radius: 25px;
+        background-color: #000;
+        animation: scroll-up 1s linear infinite;
+    }
+}
+
+@keyframes scroll-up {
+    0%{
+        opacity: 1;
+    }
+
+    33%{
+        transform: translate(-13px);
+        opacity: .8;
+    }
+
+    66%{
+        transform: translate(-26px);
+        opacity: .6;
+    }
+    100%{
+        transform: translate(-39px);
+        opacity: .5;
+    }
+
+
+}

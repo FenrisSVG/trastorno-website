@@ -1,4 +1,4 @@
-.main{
+.flex-container{
     display: flex;
 }
 
@@ -6,18 +6,66 @@
     display: flex;
     flex-direction: column;
     padding: 0 2.5em 4em;
+    background-color: $background-color-1;
+
+    @include laptop{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: 180px 1fr;
+        padding: 0 4.5em 7em;
+    }
 
     //STYLES FOR THE HTML STRUCTURE CALL PART 0$
     &-chapter{
-        padding-top: 4em;
+        display: flex;
+        align-items: flex-end;
+        height: 120px;
         padding-bottom: .5em;
 
+        @include laptop{
+            grid-column: 1/2;
+            grid-row: 1/1;
+            height: 100%;
+            padding-bottom: .4em;
+        }
+
+        &--secondary{
+            flex-direction: column;
+            align-items: flex-start;
+            height: auto;
+        }
+
+        &__container{
+            position: relative;
+            max-width: 38%;
+            padding: .1em 1.8em .3em .6em;
+            border-radius: 20px;
+            background-color: $secondary-color;
+
+            @include laptop{
+                padding: .2em 2.5em .3em .9em;
+            }
+        }
+        
         &__text{
-            width: 33%;
-            margin-bottom: 0;
-            padding: .1em .5em .2em .5em;
-            border-radius: 25px;
-            background-color: #6affaa;
+            margin: 0;
+            font-size: 1.1rem;
+
+            @include laptop{
+                font-size: 1.2rem;
+                text-transform: uppercase;
+            }
+        }
+
+        &__icon{
+            position: absolute;
+            top: 5px;
+            right: 8px;
+
+            @include laptop{
+                font-size: 1.4rem;
+                right: 13px;
+            }
         }
     }
 
@@ -25,11 +73,60 @@
         height: 300px;
         border-radius: 25px;
         overflow: hidden;
-        animation: move 5s infinite ;
+        animation: move 5s infinite;
+        transform: perspective(23em);
+        
+        @include laptop{
+            position: relative;
+            // display: flex;
+            // align-items: center;
+            // justify-content: center;
+            grid-column: 2/3;
+            grid-row: 1/3;
+            align-self: center;
+            justify-self: center;
+            height: 450px;
+            width: 50%;
+            margin-left: 6em;
+            overflow: initial;
+        }
+
+        &::after{
+            @include laptop{
+                content: '';
+                position: absolute;
+                display: block;
+                top: 25px;
+                left: 25px;
+                width: 100%;
+                height: 100%;
+                border: 5px solid #c99806;
+                border-radius: 20px;
+                z-index: -1;
+            }
+        }
 
         &__img{
             display: block;
             height: 100%;
+            max-width: 100%;
+            aspect-ratio: 16/9;
+
+            @include laptop{
+                border-radius: 20px;
+            }
+        }
+    }
+
+    &--three{
+        background-color: $aside-color-2;
+        padding-bottom: 2.4em;
+        transition: all 1s ease-in;
+        
+        @include laptop{
+            grid-template-rows: 150px 1fr;
+            width: 100%;
+            padding-bottom: 0em;
         }
     }
 }
@@ -49,23 +146,94 @@
 
 .article{
 
+    @include laptop{
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+    
     &-header{
       
       &__title{
           margin-top: 0;
           margin-bottom: 0;
           font-size: 2rem;
+          text-decoration: underline;
+          text-decoration-style: wavy;
+          text-decoration-color: $secondary-color;
+
+          & span{
+            color: #c99806;
+          }
+
+          @include laptop{
+              font-size: 3rem;
+          }
+
+          &--white{
+              padding-top: .2em;
+              color: $text-color;
+
+              @include laptop{
+                  font-size: 3.5rem;
+              }
+          }
+      }
+
+      &__icon{
+          padding-top: .7em;
+          font-size: 2rem;
+          color: $text-color;
       }
 
       &__subtitle{
           font-size: 1.4rem;
           line-height: 1.4;
+
+          & span{
+            color: #c99806;
+          }
+
+          @include laptop{
+            //   margin-top: 1em;
+              font-size: 2rem;
+          }
+
+          &--white{
+              font-size: .9rem;
+              color: $text-color;
+
+              @include laptop{
+                  width: 80%;
+                  margin-top: 1.5em;
+                  font-size: 1.5rem;
+              }
+          }
       }
     }
 
     &-body__text{
-        font-size: .8rem;
+        font-size: 1.1rem;
         line-height: 1.6;
         margin-bottom: 1.5em;
+
+         @include laptop{
+             font-size: 1.2rem;
+             margin-bottom: 1em;
+         }
+    }
+}
+
+.home,
+.aside{
+    max-width: 800px;
+    
+    @include laptop{
+        max-width: 100%;
+    }
+}
+
+@media(prefers-reduced-motion){
+    .section-image{
+        animation: none;
     }
 }

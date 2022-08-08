@@ -1,0 +1,16 @@
+.paginacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-container{
+        padding: 1.5em;
+        border: 1px solid var(--danger-color);
+        
+        &__link{
+            font-size: 1rem;
+            text-decoration: none;
+            color: $text-color;
+        }
+    }
+}

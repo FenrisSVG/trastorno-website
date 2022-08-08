@@ -1,35 +1,33 @@
 <template>
     <section class="slider" id="slider-container">
-        <aside class="slider__aside">
-            <h2 class="slider__aside-title">Introduction</h2>
-        </aside>
+        <Index title="Introduccion" />
         <!-- IMAGENES DEL SLIDER -->
         <div class="slider-container" id="slider-js">
             <div class="slider-container__image slider__img--opacity">
-                <img loading="lazy" class="slider__img" src="../assets/desktop/trastorno.jpg" alt="slider image of a person with a upset mind">
+                <img class="slider__img" src="../assets/desktop/trastorno.jpg" alt="slider image of a person with a upset mind">
             </div>
             <div class="slider-container__image">
-                <img loading="lazy" class="slider__img" src="../assets/desktop/trastorno2.jpg" alt="slider image of a person with a upset mind">
+                <img class="slider__img" src="../assets/desktop/trastorno2.jpg" alt="slider image of a person with a upset mind">
             </div>
             <div class="slider-container__image">
-                <img loading="lazy" class="slider__img" src="../assets/desktop/trastorno3.jpg" alt="slider image of a person with a upset mind">
+                <img class="slider__img" src="../assets/desktop/trastorno3.jpg" alt="slider image of a person with a upset mind">
             </div>
             <div class="slider-container__image">
-                <img loading="lazy" class="slider__img" src="../assets/desktop/trastorno4.jpg" alt="slider image of a person with a upset mind">
+                <img class="slider__img" src="../assets/desktop/trastorno4.jpg" alt="slider image of a person with a upset mind">
             </div>
             <div class="slider-container__image">
-                <img loading="lazy" class="slider__img" src="../assets/desktop/trastorno5.jpg" alt="slider image of a person with a upset mind">
+                <img class="slider__img" src="../assets/desktop/trastorno5.jpg" alt="slider image of a person with a upset mind">
             </div>
             <div class="slider-container__text">
                 <h1 class="title">
                     <span class="typed"></span>
                 </h1>
-                <div class="title" id="cadenas-texto">
-                    <p>Trastornos <i class="mascota">Mentales</i></p>
-                    <p>Trastornos <i class="mascota">De Ansiedad Generalizada</i></p>
-                    <p>Trastornos <i class="mascota">Depresivos</i></p>
-                    <p>Trastornos <i class="mascota">Relacionados con el estres</i></p>
-                    <p>Trastornos <i class="mascota">De Personalidad</i></p>
+                <div class="title" id="cadenas-texto"
+                v-if="titles.length > 0">
+                    <p v-for="item in titles"
+                    :key="item.id">
+                        Trastornos <i class="mascota">Mentales</i>
+                    </p>
                 </div>
             </div>
         </div>
@@ -38,9 +36,37 @@
 
 <script>
 import Typed from 'typed.js'
+import Index from './Index.vue'
 
 export default {
     name: 'Slider',
+    components: {
+        Index
+    },
+    data(){
+        return {
+            titles: [{
+                id: 1,
+                trastorno: 'Mentales.'
+            },
+            {
+                id: 2,
+                trastorno: 'De Ansiead Generalizada.'
+            },
+            {
+                id: 3,
+                trastorno: 'Depresivos.'
+            },
+            {
+                id: 4,
+                trastorno: 'Relacionadas con el estres.'
+            },
+            {
+                id: 5,
+                trastorno: 'De Personalidad.'
+            },]
+        }
+    },
     methods:{
         slider(){
         //Elemento para cargar el slide
@@ -53,7 +79,7 @@ export default {
         const counter = () => {
             images.map(image => image.classList.remove('slider__img--opacity'))
             images[cont].classList.add('slider__img--opacity')
-            setInterval(slideImage(cont), 5000);    
+            setInterval(slideImage(cont), 500);    
         }
 
         //Intervalos de tiempo para el contador
@@ -71,7 +97,7 @@ export default {
           new Typed('.typed',{
             stringsElement: '#cadenas-texto',
             typeSpeed: 150,
-            startDelay: 300,
+            //startDelay: 300,
             backSpeed: 100,
             smartBackspace: true,
             shuffle: false,

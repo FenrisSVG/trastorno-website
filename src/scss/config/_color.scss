@@ -1,25 +1,24 @@
 :root {
     --primary-color: #161719;
-    --secondary-color: #52d3aa;
+    --secondary-color: #B7C2C2;
     --danger-color: #972745;
     --background-color: #111213;
     --background-color-1: #F1EAE1;
-    --background-color-2: #F2BEBD
-    --text-color: #eff;
+    --background-color-2: #F2BEBD;
+    --background-color-3: #234F4E;
+    --background-color-4: #151A2D;
+    --text-color: #fff;
     --title-color: hsl(33, 15%, 14%);
-    --menu-color: ##D5DCD5;
+    --menu-color: #D5DCD5;
     --menu-color-1: #F0EAE3;
     --menu-color-2: ##E7C2BD;
     --menu-color-3: #94A98C;
     --menu-color-4: #B7C0C1;
     --menu-color-5: #E1B695;
-    --menu-color-6: #DDDBC1;
-    --menu-color-7: #DBC47E;
-    --menu-color-8: #6A5E5F;
-    --aside-color: #D4DDD4;
+    --aside-color: #d4ddd4;
     --aside-color-1: #C2813B;
-    --aside-color-2: #12504F;
-    --aside-color-3: #C2813B;
+    --aside-color-2: #12504F; 
+    --aside-color-3: #ECC0BC; 
     --link-color: rgb(57, 107, 160);
   }
   
@@ -27,6 +26,10 @@
   $secondary-color: var(--secondary-color);
   $danger-color: var(--danger-color);
   $background-color: var(--background-color);
+  $background-color-1: var(--background-color-1);
+  $background-color-2: var(--background-color-2);
+  $background-color-3: var(--background-color-3);
+  $background-color-4: var(--background-color-4);
   $text-color: var(--text-color);
   $title-color: var(--title-color);
   $menu-color: var(--menu-color);
@@ -35,8 +38,8 @@
   $menu-color-3: var(--menu-color-3);
   $menu-color-4: var(--menu-color-4);
   $menu-color-5: var(--menu-color-5);
-  $menu-color-6: var(--menu-color-6);
-  $menu-color-7: var(--menu-color-7);
   $aside-color: var(--aside-color);
+  $aside-color-1: var(--aside-color-1);
   $aside-color-2: var(--aside-color-2);
+  $aside-color-3: var(--aside-color-3);
   $link-color: var(--link-color);

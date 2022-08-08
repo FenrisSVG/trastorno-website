@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <header class="header">
+    <header class="header" @mouseenter="showMenuMouseOver"
+    @mouseleave="hideMenu">
+    <!-- @mouseout="hideMenu" @mouseleave="hideMenu" -->
+      <p class="header-content">Table of contents</p>
       <div class="header-container">
         <p class="header-container__title">Trastornos Mentales</p>
         <div class="icon-menu" id="icon-bars" @click="showMenu">
@@ -12,37 +15,67 @@
           <i class="fas fa-times icon-close__icon"></i>
         </div>
         <ol class="main-menu">
-          <li class="main-menu__item">
-            <router-link class="main-menu__link" to="">Link 1</router-link>
-          </li>
-          <li class="main-menu__item main-menu__item--primary">
-            <router-link class="main-menu__link" to="">Link 2</router-link>
-          </li>
-          <li class="main-menu__item main-menu__item--secondary">
-            <router-link class="main-menu__link" to="">Link 3</router-link>
-          </li>
-          <li class="main-menu__item main-menu__item--thirdary">
-            <router-link class="main-menu__link" to="">Link 4</router-link>
-          </li>
-          <li class="main-menu__item main-menu__item--fivedary">
-            <router-link class="main-menu__link" to="">Link 5</router-link>
-          </li>
-          <li class="main-menu__item main-menu__item--fourdary">
-            <router-link class="main-menu__link" to="">Link 6</router-link>
-          </li>
-          <li class="main-menu__item main-menu__item--sixdary">
-            <router-link class="main-menu__link" to="">Link 7</router-link>
+          <li v-for="item in navigation"
+            :key="item.id"
+            :class="item.clase">
+            <a class="main-menu__link" :href="item.href" rel="nofollow noopener">
+              {{item.menu}}
+            </a>
           </li>
         </ol>
       </nav>
     </header>
-    <router-view/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default{
   name:'App',
+  data(){
+    return {
+      navigation: [{
+        id: 1,
+        clase: 'main-menu__item',
+        menu: 'Meaning of Mind Disorder',
+        href: '#meaning'
+      },
+      {
+        id: 2,
+        clase: 'main-menu__item main-menu__item--primary',
+        menu: 'Kind of Mind Disorder',
+        href: '#kind'
+      },
+      {
+        id: 3,
+        clase: 'main-menu__item main-menu__item--secondary',
+        menu: 'Autoevaluation Test',
+        href: '#test'
+      },
+      {
+        id: 4,
+        clase: 'main-menu__item main-menu__item--thirdary',
+        menu: 'Tratamiento',
+        href: '#tratamiento'
+      },
+      {
+        id: 5,
+        clase: 'main-menu__item main-menu__item--fivedary',
+        menu: 'Tips',
+        href: '#tips'
+      },
+      {
+        id: 6,
+        clase: 'main-menu__item main-menu__item--fourdary',
+        menu: 'Link 6'
+      },
+      {
+        id: 7,
+        clase: 'main-menu__item main-menu__item--sixdary',
+        menu: 'Link 7'
+      },]
+    }
+  },
   methods: {
     closeMenu(e){
       const iconClose = document.getElementById('icon-close')
@@ -61,6 +94,28 @@ export default{
        if(iconBars){
         if(e.target.classList.contains('icon-menu') || e.target.tagName == "I"){
             nav.classList.add('show')
+        }
+      }
+    },
+    showMenuMouseOver(e){
+      //const header = document.getElementById('header')
+      const nav = document.getElementById('nav')
+
+      if(nav){
+        if(window.innerWidth > 900){
+          if( e.target.classList.contains('header')
+          || e.target.classList.contains('header-content')){
+            nav.classList.add('nav--show')
+          }
+        } 
+      }
+    },
+    hideMenu(e){
+      const nav = document.getElementById('nav')
+      
+      if(nav){
+        if(e.target.classList.contains('header')){
+          nav.classList.remove('nav--show')
         }
       }
     }

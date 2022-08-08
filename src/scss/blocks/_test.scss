@@ -1,0 +1,190 @@
+.section--four{
+    padding-bottom: .5em;
+
+    @include laptop{
+        position: relative;
+        grid-template-rows: 1fr;
+        padding-bottom: 1em;
+    }
+}
+
+.section--sticky{
+    @include laptop{
+        position: sticky;
+        top: 0;
+        height: 20%;
+        margin-bottom: 4.5em;
+    }
+}
+
+.article-test{
+    display: flex;
+
+    &__title{
+        margin-top: .1em;
+        margin-bottom: 1em;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+
+        @include laptop{
+            font-size: 2.5rem;
+        }
+    }
+
+    &__title,
+    &__text{
+        line-height: 1.3;
+    }
+
+    &__text{
+        font-size: 1.3rem;
+
+        @include laptop{
+            font-size: 1.6rem;
+        }
+    }
+}
+
+.header-test{
+    position: relative;
+    padding-bottom: 3em;
+
+    &::before{
+        content: '';
+        position: absolute;
+        display: block;
+        bottom: 0;
+        left: -85px;
+        width: 357px;
+        height: 1px;
+        background-color: $background-color;
+        opacity: .5;
+
+        @include laptop{
+            display: none;
+        }
+    }
+}
+
+.tratamiento-icon{
+    font-size: 1rem;
+    color: $background-color;
+
+    @include laptop{
+        font-size: 1.5rem;
+    }
+}
+
+.body-test__text,
+.body-test__tratamiento-text,
+.test-image__description-text{
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.body-test{
+    padding-top: 3.5em;
+
+    @include laptop{
+        display: flex;
+        flex-direction: column;
+        grid-column: 2/3;
+        padding-left: 1em;
+    }
+
+    &__text{
+        margin-bottom: 1.5em;
+
+        @include laptop{
+            font-size: 1.6rem;
+            line-height: 1.3;
+        }
+    }
+    
+    &__icon{
+        right: 5px;
+        transform: translate(-164px);
+
+        @include laptop{
+            right: 10px;
+        }
+    }
+
+    &__tratamiento-title{
+        margin-top: .2em;
+
+        @include laptop{
+            text-transform: uppercase;
+            font-size: 3.5rem;
+        }
+    }
+
+    &__tratamiento-text{
+        margin-top: 1.8em;
+
+        @include laptop{
+            margin-top: 1.6em;
+        }
+    }
+
+    &__tratamiento-icon{
+        padding: .3em 0 1.2em;
+
+        @include laptop{
+            font-size: 1.3rem;
+            padding: 0 0 1em;
+        }
+    }
+}
+
+.section-chapter--padding{
+    padding-top: 3em;
+
+    @include laptop{
+        padding-top: 3.5em;
+    }
+}
+
+.test-image{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 2em;
+    perspective: 800px;
+
+    @include laptop{
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &__container{
+        border-radius: 10px;
+        overflow: hidden;
+
+        @include laptop{
+            max-width: 70%;
+            flex-grow: 1;
+            border-radius: 15px;
+        }
+
+        img{
+            @include laptop{
+                aspect-ratio: 16/9;
+            }
+        }
+    }
+
+    &__description{
+        max-width: 90%;
+    }
+}
+
+.test-img{
+    display: block;
+    max-width: 100%;
+}
+
+.test-chapter{
+    height: 140px;
+}

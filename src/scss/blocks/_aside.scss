@@ -1,0 +1,59 @@
+.aside-alone{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+    width: 100%;
+    background-color: $background-color;
+    color: $danger-color;
+    font-weight: 800;
+    overflow: hidden;
+
+    @include laptop{
+       height: 120px;
+    }
+    
+    &__text{
+        position: absolute;
+        left: 25px;
+        margin: 0;
+        width: 100%;
+        line-height: 50px;
+        font-size: 1.4rem;
+        transform: translateX(100%);
+        text-shadow: 300px 0 0 $danger-color;
+        animation: scrolling 20s linear infinite;
+        
+        @include laptop{
+            font-size: 2rem;
+            // text-shadow: 300px 0 0#fff,
+            // 600px 0 0#fff, 900px 0 0#fff;
+            text-shadow: 430px 0 0 $danger-color,
+            860px 0 0 $danger-color, 1290px 0 0 $danger-color;
+            animation: scrolling 30s linear infinite;
+        }
+
+        & span{
+            padding-right: .3em;
+        }
+    }
+}
+
+@keyframes scrolling{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%)
+    }
+}
+
+@keyframes scrolling-icon{
+    0%{
+        transform: translateX(400%);
+    }
+    100%{
+        transform: translateX(-100%)
+    }
+}

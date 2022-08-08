@@ -1,6 +1,6 @@
 body {
     min-height: 100vh;
-    overflow-x: hidden;
+    //overflow-x: hidden;
 }
 
 html{
@@ -8,9 +8,9 @@ html{
 }
 
 :is(h1,h2,h3,h4,h5,h6){
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
-:is(p,a){
-  font-family: 'Open Sans', sans-serif;
+:is(p,a,li){
+  font-family: 'Oswald', sans-serif;
 }
