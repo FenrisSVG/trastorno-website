@@ -23,9 +23,11 @@
                             <i class="fas fa-plus"></i>
                         </li>
                         <div class="trastornos-category"
-                        v-for="(value,index) in item" :key="index">
+                        v-for="(value,index) in trastornosCategory" :key="index">
                             <ul class="category-menu">
-                                <li class="category-menu__item">Trastorno <span>{{value.trastornoMenu}}</span></li>
+                                <li class="category-menu__item"
+                                v-for="(item,index) in value.trastornoMenu" :key="index">
+                                Trastorno <span>{{item}}</span></li>
                             </ul>
                         </div>
                     </ul>
@@ -108,10 +110,8 @@ export default {
 
             const categoryTrastorno = {
                 "trastornos-menu__item--one": () => {
-                    for(let i = 0; i < category.length; i++){
-                        category[0].classList.toggle('trastornos-category--show')
-                        icon[0].classList.toggle('rotate-icon')
-                    }
+                    category[0].classList.toggle('trastornos-category--show')
+                    icon[0].classList.toggle('rotate-icon')
                 },
                 'trastornos-menu__item--two': () => {
                     category[1].classList.toggle('trastornos-category--show')
