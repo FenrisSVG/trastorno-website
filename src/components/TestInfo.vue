@@ -32,26 +32,16 @@
                     <div class="article-header__icon body-test__tratamiento-icon">
                         <i class="fas fa-crown tratamiento-icon"></i>
                     </div>
-                    <div class="test-image">
+                    <div class="test-image" v-for="item in tratamientos"
+                    :key="item.id">
                         <div class="test-image__container" v-scroll-reveal.reset="{delay:500,rotate:{x:40,z:40}}">
-                            <img class="test-img" src="../assets/desktop/trastorno.jpg" alt="" loading="lazy">
+                            <img class="test-img" :src="item.src" :alt="item.alt" loading="lazy">
                         </div>
                         <div class="test-image__description">
-                            <p class="test-image__description-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias voluptatum voluptatibus corrupti mollitia veritatis modi esse voluptas perspiciatis! Natus, repudiandae!</p>
+                            <p class="test-image__description-text">{{item.text}}</p>
                         </div>
                         <div class="test-image__icon">
-                            <i class="fas fa-crown tratamiento-icon"></i>
-                        </div>
-                    </div>
-                    <div class="test-image">
-                        <div class="test-image__container" v-scroll-reveal.reset="{delay:500,rotate:{x:40,z:40}}">
-                            <img class="test-img" src="../assets/desktop/trastorno.jpg" alt="" loading="lazy">
-                        </div>
-                        <div class="test-image__description">
-                            <p class="test-image__description-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias voluptatum voluptatibus corrupti mollitia veritatis modi esse voluptas perspiciatis! Natus, repudiandae!</p>
-                        </div>
-                        <div class="test-image__icon">
-                            <i class="fas fa-crown tratamiento-icon"></i>
+                            <i :class="item.icon"></i>
                         </div>
                     </div>
                 </div>
@@ -69,6 +59,25 @@ export default {
     name: 'TestInfo',
     components:{
         Index,Chapter,Title
+    },
+    data(){
+        return{
+            tratamientos: [
+            {
+                id: 1,
+                src: require('../assets/desktop/Tratamiento1.webp'),
+                text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias voluptatum voluptatibus corrupti mollitia veritatis modi esse voluptas perspiciatis! Natus, repudiandae!',
+                icon: 'fas fa-crown tratamiento-icon',
+                alt: 'tratamiento pastillas depresion'
+            },
+            {
+                id: 2,
+                src: require('../assets/desktop/Tratamiento2.webp'),
+                text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias voluptatum voluptatibus corrupti mollitia veritatis modi esse voluptas perspiciatis! Natus, repudiandae!',
+                icon: 'fas fa-crown tratamiento-icon',
+                alt: 'tratamiento comida saludable manzanas rojas'
+            }]
+        }
     }
 }
 </script>

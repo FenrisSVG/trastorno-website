@@ -21,12 +21,13 @@
                         :class="item.trastornoClase">
                             <span class="trastornos-menu__text">{{item.trastorno}}</span>
                             <i class="fas fa-plus"></i>
+                            <!-- <div class="bodymovinanim"></div> -->
                         </li>
                         <div class="trastornos-category"
-                        v-for="(value,index) in trastornosCategory" :key="index">
+                        v-for="(value,index) in trastornosCategory" :key="'A' + index">
                             <ul class="category-menu">
                                 <li class="category-menu__item"
-                                v-for="(item,index) in value.trastornoMenu" :key="index">
+                                v-for="(item,index) in value.trastornoMenu" :key="'B' + index">
                                 Trastorno <span>{{item}}</span></li>
                             </ul>
                         </div>
@@ -35,7 +36,8 @@
                 <footer class="article-footer">
                     <div class="article-footer__button">
                         <router-link to="/trastornos" class="article-footer__link"
-                        data-test-id="trastornos-link-test"><span>Ver Trastornos...</span></router-link>
+                        data-test-id="trastornos-link-test"
+                        ><span>Ver Trastornos...</span></router-link>
                         <i class="fas fa-long-arrow-alt-right article-footer__icon"></i>
                     </div>
                 </footer>
@@ -44,10 +46,22 @@
     </article>
 </template>
 
+<style scoped>
+    .bodymovinanim{
+        width: 90%;
+        max-width: 50px;
+        height: 30px;
+        /* margin-bottom: 30px; */
+        border: 1px solid red;
+        cursor: pointer;
+    }
+</style>
+
 <script>
 import Index from './Index.vue'
 import Title from './Title.vue'
 import Chapter from './SectionChapter.vue'
+// import bodymovin from 'lottie-web'
 
 export default {
     name: 'KindOfTrastornos',
@@ -56,6 +70,7 @@ export default {
     },
     data(){
         return {
+            path: require("../assets/icons/visibility-V3.json"),
             trastornosCategory: [{
                 id: 1,
                 trastorno: 'Trastornos de ansiedad',
@@ -137,11 +152,31 @@ export default {
 
             if(e.target.tagName == 'I'){
                 if(category){
-                    console.log(category)
                     categoryTrastorno[e.target.parentNode.classList[1]]()
                 }
             }
-        }
+        },
+        // animateIconsWhenClicked(){
+        //     let iconSkipForward = [...document.querySelectorAll('.bodymovinanim')];
+        //     iconSkipForward.forEach(item => console.log(item))
+
+        //     let animationSkipForward = bodymovin.loadAnimation({
+        //         container: iconSkipForward[0],
+        //         renderer: 'svg',
+        //         loop: false,
+        //         autoplay: false,
+        //         path: "https://raw.githubusercontent.com/thesvbd/Lottie-examples/master/assets/animations/skip-forward.json"
+        //     });
+
+        //     console.log(animationSkipForward)
+
+        //     iconSkipForward.forEach(item => {
+        //         item.addEventListener('click', function() {
+        //             animationSkipForward.playSegments([0,60], true);
+        //         });
+
+        //     })
+        // }
     }
 }
 </script>
