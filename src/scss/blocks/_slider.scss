@@ -90,17 +90,17 @@
     margin: 0;
 
     @include laptop{
-        width: 500px;
-        height: 90px;
+        width: 800px;
+        height: 180px;
         //transform: translate(-50%);
     }
 
     & span{
         font-size: 1.7rem;
-        color: $text-color;
+        color: #fff;
 
         @include laptop{
-            font-size: 2.2rem;
+            font-size: 2.5em;
         }
     }
 }

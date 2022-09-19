@@ -42,6 +42,10 @@
         @include laptop{
             font-size: 1.6rem;
         }
+
+        &--color{
+            color: #c99806;
+        }
     }
 }
 
@@ -99,6 +103,10 @@
             font-size: 1.6rem;
             line-height: 1.3;
         }
+
+        &--color{
+            color: #c99806;
+        }
     }
     
     &__icon{
@@ -108,6 +116,10 @@
         @include laptop{
             right: 10px;
         }
+    }
+
+    &__tratamiento--color{
+        color: #c99806;
     }
 
     &__tratamiento-title{
@@ -177,6 +189,10 @@
 
     &__description{
         max-width: 90%;
+
+        &--color{
+            color: #c99806;
+        }
     }
 }
 

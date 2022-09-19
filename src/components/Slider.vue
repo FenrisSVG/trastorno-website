@@ -14,7 +14,7 @@
                 <div class="title" id="cadenas-texto"
                 v-if="titles.length > 0">
                     <p v-for="item in titles"
-                    :key="item.id">
+                    :key="item.id" class="title__text">
                         Trastornos <i class="mascota">{{item.trastorno}}</i>
                     </p>
                 </div>

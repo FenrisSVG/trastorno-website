@@ -48,7 +48,7 @@
       <aside class="aside" v-scroll-reveal.reset="{ delay: 400, opacity: 0.2 }">
         <div class="slider__aside slider__aside--three">
           <h2 class="slider__aside-title slider__aside-title--white">
-            Navigation
+            Navegación
           </h2>
         </div>
         <section class="section section--secondary">
@@ -56,10 +56,11 @@
             <h2
               class="section-chapter__title section-chapter__title--navigation"
             >
-              Navigation
+              Navegación
             </h2>
             <p class="section-chapter__text--secondary">
-              Just in cause you need some help getting around.
+              Solo en caso de que necesites ayuda para navegar.
+              <!-- Just in cause you need some help getting around. -->
             </p>
           </div>
           <div class="navigation">
@@ -107,6 +108,7 @@
       <Psicologos />
       <Socials />
     </main>
+  <Footer />
   </div>
 </template>
 
@@ -121,6 +123,7 @@ import Recomendation from "./Recomendation.vue";
 import Psicologos from "./Psicologos.vue";
 import Aside from "./Aside.vue";
 import Socials from "./Socials.vue";
+import Footer from "./Footer.vue";
 
 export default {
   name: "Home",
@@ -135,23 +138,24 @@ export default {
     Aside,
     Socials,
     Title,
+    Footer
   },
   data() {
     return {
       navigation: [
         {
           id: 1,
-          name: "Meaning of Mind Disorder",
+          name: "Concepto de Trastorno Mental.",
           href: "#meaning",
         },
         {
           id: 2,
-          name: "Kind Of Mind Disorder",
+          name: "Tipos de Trastorno Mentales.",
           href: "#kind",
         },
         {
           id: 3,
-          name: "Autoevaluation Text",
+          name: "Test de Autoevaluacion",
           href: "#test",
         },
         {
@@ -180,19 +184,25 @@ export default {
       trastornos: [
         {
           id: 1,
-          text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident magni quam, natus cumque unde quisquam.",
+          text: "Un trastorno mental es un síndrome caracterizado por una alteración clínicamente " +
+            "significativa del estado cognitivo, la regulación emocional o el comportamiento del individuo " +
+            "que refleja una disfunción de los procesos psicólogicos, biologicos o del desarrollo que " +
+            "subyacen en su función mental.",
         },
         {
           id: 2,
-          text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident magni quam, natus cumque unde quisquam.",
+          text: "Habitualmente, los trastornos mentales van asociados a un estrés significativo o a discapacidad, " + 
+            "ya sea social, laboral o de otras actividades importantes. Una respuesta predecible o culturalmente aceptada " +
+            "ante un estres usual o una pérdida, tal como la muerte de un ser querido, no constituye un trastorno mental.",
         },
         {
           id: 3,
-          text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident magni quam, natus cumque unde quisquam.",
+          text: "Los Trastornos Mentales se definen en relación a las normas y valores culturales, sociales y familiares.",
         },
         {
           id: 4,
-          text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident magni quam, natus cumque unde quisquam.",
+          text: "El diagnostico de un trastorno mental no equivale a una necesidad de tratamiento, la necesidad de tratamiento es una decisión " +
+            "clínica compleja que se debe tomar en consideración la gravedad del sintoma.",
         },
       ],
     };

@@ -3,7 +3,7 @@
     <header class="header" @mouseenter="showMenuMouseOver"
     @mouseleave="hideMenu">
     <!-- @mouseout="hideMenu" @mouseleave="hideMenu" -->
-      <p class="header-content" id="content">Table of contents</p>
+      <p class="header-content" id="content">Tabla de Contenido</p>
       <div class="header-container">
         <p class="header-container__title">Trastornos Mentales</p>
         <div class="icon-menu" id="icon-bars" @click="showMenu">
