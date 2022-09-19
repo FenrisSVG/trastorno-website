@@ -2,21 +2,10 @@
     <section class="slider" id="slider-container">
         <Index title="Introduccion" />
         <!-- IMAGENES DEL SLIDER -->
-        <div class="slider-container" id="slider-js">
-            <div class="slider-container__image slider__img--opacity">
-                <img class="slider__img" src="../assets/desktop/trastorno.jpg" alt="slider image of a person with a upset mind">
-            </div>
-            <div class="slider-container__image">
-                <img class="slider__img" src="../assets/desktop/trastorno2.jpg" alt="slider image of a person with a upset mind">
-            </div>
-            <div class="slider-container__image">
-                <img class="slider__img" src="../assets/desktop/trastorno3.jpg" alt="slider image of a person with a upset mind">
-            </div>
-            <div class="slider-container__image">
-                <img class="slider__img" src="../assets/desktop/trastorno4.jpg" alt="slider image of a person with a upset mind">
-            </div>
-            <div class="slider-container__image">
-                <img class="slider__img" src="../assets/desktop/trastorno5.jpg" alt="slider image of a person with a upset mind">
+        <div class="slider-container" id="slider-js"
+        v-if="sliders.length > 0">
+            <div v-for="value in sliders" :key="value.id" :class="value.class">
+                <img class="slider__img" :src="value.src" :alt="value.alt">
             </div>
             <div class="slider-container__text">
                 <h1 class="title">
@@ -26,7 +15,7 @@
                 v-if="titles.length > 0">
                     <p v-for="item in titles"
                     :key="item.id">
-                        Trastornos <i class="mascota">Mentales</i>
+                        Trastornos <i class="mascota">{{item.trastorno}}</i>
                     </p>
                 </div>
             </div>
@@ -64,7 +53,38 @@ export default {
             {
                 id: 5,
                 trastorno: 'De Personalidad.'
-            },]
+            }],
+            sliders: [{
+                    id: 1,
+                    src: require('../assets/desktop/slider.webp'),
+                    alt: 'slider image of a person with a upset mind',
+                    class: 'slider-container__image'
+                },
+                {
+                    id: 2,
+                    src: require('../assets/desktop/slider2.webp'),
+                    alt: 'slider image of a person with a upset mind',
+                    class: 'slider-container__image'
+                },
+                {
+                    id: 3,
+                    src: require('../assets/desktop/slider3.webp'),
+                    alt: 'slider image of a person with a upset mind',
+                    class: 'slider-container__image'
+                },
+                {
+                    id: 4,
+                    src: require('../assets/desktop/slider4.webp'),
+                    alt: 'slider image of a person with a upset mind',
+                    class: 'slider-container__image'
+                },
+                {
+                    id: 5,
+                    src: require('../assets/desktop/slider5.webp'),
+                    alt: 'slider image of a person with a upset mind',
+                    class: 'slider-container__image'
+                }        
+        ]
         }
     },
     methods:{

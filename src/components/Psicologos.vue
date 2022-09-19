@@ -49,7 +49,7 @@
         </p>
         <div class="psicologos-footer__image" id="psicologo-image">
           <img
-            src="../assets/desktop/Psicologo.webp"
+            src="../assets/desktop/Psicologo(1).webp"
             alt="psicologo's name mistery perfil"
             loading="lazy"
             class="psicologos-footer__psicologo"
