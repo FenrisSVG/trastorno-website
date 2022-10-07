@@ -41,10 +41,10 @@
         </div>
         <div class="article-footer article-footer--test">
           <div class="article-footer__button body-test__button">
-            <router-link
-              to="/trastornos"
-              class="article-footer__link body-test__link"
-              ><span>Ir a la pagina...</span></router-link
+            <a
+              href="https://rachael.vercel.app/"
+              class="article-footer__link body-test__link" target="_blank"
+              ><span>Ir a la pagina...</span></a
             >
             <i
               class="fas fa-long-arrow-alt-right article-footer__icon body-test__icon"

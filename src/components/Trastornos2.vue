@@ -1,35 +1,39 @@
 <template>
-    <div class="trastorno-container" v-if="trastornos.length > 0">
-      <h2 class="test-container__text">Tipos de Trastornos Mentales.</h2>
-        <Trastorno :trastorno="trastorno" v-for="trastorno in trastornos.slice(5,10)" :key="trastorno.id"/>
-        <Paginacion/>
-        <Peligrosos/>
-        <!-- <Footer/> -->
-    </div>
+  <div class="trastorno-container" v-if="trastornos.length > 0">
+    <h2 class="trastorno-container__text">Tipos de Trastornos Mentales.</h2>
+    <Trastorno
+      :trastorno="trastorno"
+      v-for="trastorno in trastornos.slice(5, 10)"
+      :key="trastorno.id"
+    />
+    <Paginacion />
+    <Peligrosos />
+    <Footer/>
+  </div>
 </template>
 
 <script>
-
-import {mapGetters} from 'vuex'
-import Trastorno from './TrastornoItem.vue';
-//import Footer from './Footer.vue';
-import Paginacion from './Paginacion.vue';
-import Peligrosos from './TPeligrosos.vue';
+import { mapGetters } from "vuex";
+import Trastorno from "./TrastornoItem.vue";
+import Footer from './Footer.vue';
+import Paginacion from "./Paginacion.vue";
+import Peligrosos from "./TPeligrosos.vue";
 
 export default {
-  name: 'Trastornos2',
-  components:{
-    Peligrosos,Trastorno,Paginacion
+  name: "Trastornos2",
+  components: {
+    Peligrosos,
+    Trastorno,
+    Paginacion,
+    Footer
   },
   computed: {
     ...mapGetters({
-      trastornos: 'filteredTrastornos'
-    })
+      trastornos: "filteredTrastornos",
+    }),
   },
-  created(){
-    return window.scrollTo(0,0)
-  }
-}
+  created() {
+    return window.scrollTo(0, 0);
+  },
+};
 </script>
-
-

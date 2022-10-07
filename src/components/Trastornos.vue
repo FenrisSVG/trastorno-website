@@ -16,17 +16,14 @@
     >
       <div class="trastorno-information__header">
         <h3 class="trastorno-information__header-title">
-          ¿Que son los <span>Trastornos Mentales</span> ?
+          ¿Cuáles son los <span>Trastornos Mentales</span> que abarcamos?
         </h3>
         <p class="trastorno-information__header-text">
-          Los trastornos mentales son aquellos que se caracterizan por una
-          combinacion de alteraciones de pensmiento, las percepciones,
-          emociones, la conducta y las relaciones con los demas. En la
-          actualidad se disponen de estrategias eficaces para prevenir algunos
-          trastornos mentales y medidas para aliviar el sufrimiento que causan.
-          Existen muchos de ellos y en esta pagina te vamos a explicar y mas
-          informacion acerca de ellos. Haga clic en el siguiente enlace para
-          saber los
+          A continuación, en la siguiente sección, usted, podra visualizar
+          los tipos de trastornos mentales que abarca nuestra pagina para poder usted
+          si desea, informarse sobre cada uno de ellos, como su definicion,
+          los sintomas que presenta cada uno de ellos, lo que debes hacer si tu
+          crees que te sientes identificado con uno. Si usted desea ver los
           <a
             class="trastorno-information__header-link"
             href="#peligrosos"
@@ -34,7 +31,7 @@
           >
             trastornos mas peligrosos</a
           >
-          que te pueden diagnosticar.
+          haga clic en el enlace anterior.
         </p>
       </div>
       <div class="trastorno-information__footer">
@@ -54,7 +51,7 @@
     />
     <Paginacion />
     <Peligrosos />
-    <!-- <Footer/> -->
+    <Footer/>
   </div>
 </template>
 
@@ -71,7 +68,7 @@
 <script>
 import { mapGetters, mapState } from "vuex";
 import Trastorno from "./TrastornoItem.vue";
-// import Footer from './Footer.vue';
+import Footer from './Footer.vue';
 import Paginacion from "./Paginacion.vue";
 import Peligrosos from "./TPeligrosos.vue";
 
@@ -81,6 +78,7 @@ export default {
     Peligrosos,
     Trastorno,
     Paginacion,
+    Footer
   },
   methods:{
     ChangePathToMenuHeader(){

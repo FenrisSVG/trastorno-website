@@ -38,7 +38,7 @@
             line-height: 1.6;
             margin-bottom: 20px;
             width: 45%;
-            color: $text-color;
+            color: $background-color;
         }
 
         &__link{
@@ -52,7 +52,7 @@
             text-decoration: none;
             font-weight: 400;
             letter-spacing: .1rem;
-            color: $text-color;
+            color: $background-color;
             background-color: transparent;
 
             &-svg{
@@ -90,7 +90,7 @@
             flex-basis: 1700px;
 
             &-title{
-                color: $text-color;
+                color: $background-color;
                 font-size: 23px;
 
                 & span{
@@ -99,9 +99,9 @@
             }
 
             &-text{
-                color: $text-color;
-                line-height: 1.5; 
-                font-size: 1.1rem;
+                color: $background-color;
+                line-height: 1.8; 
+                font-size: 1.3rem;
             }
 
             &-link{
@@ -140,21 +140,15 @@
     
     &-container{
         padding-top: 1.8em;
-        background-color: $background-color;
+        background-color: $menu-color-1;
 
         &__text{
-            color: $text-color;
+            color: $background-color;
             font-size: 2rem;
             padding-left: 1.5em;
         }
     }
 }
-
-
-.trastorno-information--none{
-    display: none;
-}
-
 
 .danger{
     position: relative;
@@ -175,7 +169,7 @@
 
         &__title{
             grid-column: 1/6;
-            color: $text-color;
+            color: $background-color;
             padding: 1.2em 0;
             text-align: center;
         }
@@ -219,5 +213,5 @@
 .test-container__title{
     font-size: 1.8rem;
     padding-left: 1.7em;
-    color: $text-color;
+    color: $background-color;
 }

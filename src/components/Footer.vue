@@ -23,7 +23,7 @@
             <p class="footer-about__title">Resources</p>
             <ul class="footer-about__menu" v-if="linkThree !== ''">
             <li class="footer-about__item" v-for="(item,index) in linkThree" :key="index">
-                <a href="" class="footer-about__link">{{item.name}}</a></li>
+                <a :href="item.href" class="footer-about__link">{{item.name}}</a></li>
             </ul>
         </div>
         </div>
@@ -48,19 +48,23 @@ export default {
               name: 'Community'
           }],
           linkThree: [{
-              name: 'Help'
+              name: 'Trastornos',
+              href: '#meaning'
           },
           {
-              name: 'Support'
+              name: 'Tratamiento',
+              href: '#tratamiento'
           },
           {
-              name: 'Terms of Use'
+              name: 'Tipos'
           },
           {
-              name: 'Privacy'
+              name: 'Tipos de Trastornos',
+              href: '#kind'
           },
           {
-              name: 'legacy'
+              name: 'Test Autoevaluacion',
+              href: 'https://rachael.vercel.app/'
           }]
       }
   }
